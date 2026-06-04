@@ -30,6 +30,13 @@ def create_app(config_class=config):
     app.register_blueprint(posts)
     app.register_blueprint(main)
     app.register_blueprint(errors)
+
+    
+
+    with app.app_context():
+        db.create_all()  
+
     return app
+    
     
     
